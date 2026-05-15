@@ -116,13 +116,6 @@
   <!-- ── Toolkit / Skills ── -->
   <section class="px-4 sm:px-6 pb-24">
     <div class="max-w-4xl mx-auto">
-      <div class="flex items-center gap-4 mb-8">
-        <span class="font-mono text-4xl font-black text-zinc-100 dark:text-zinc-800 select-none">04</span>
-        <div>
-          <p class="text-[10px] font-mono text-accent-500 uppercase tracking-widest mb-0.5">// toolkit</p>
-          <h2 class="text-xl font-bold text-zinc-800 dark:text-zinc-100">My Toolkit</h2>
-        </div>
-      </div>
       <Skills />
     </div>
   </section>
@@ -130,13 +123,6 @@
   <!-- ── Timeline ── -->
   <section class="px-4 sm:px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="flex items-center gap-4 mb-8">
-        <span class="font-mono text-4xl font-black text-zinc-100 dark:text-zinc-800 select-none">05</span>
-        <div>
-          <p class="text-[10px] font-mono text-accent-500 uppercase tracking-widest mb-0.5">// experience</p>
-          <h2 class="text-xl font-bold text-zinc-800 dark:text-zinc-100">My Journey</h2>
-        </div>
-      </div>
       <Timeline />
     </div>
   </section>
