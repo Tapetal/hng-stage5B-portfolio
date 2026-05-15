@@ -45,9 +45,9 @@
     <a href="/" class="flex items-center gap-2.5 group">
       <div class="w-8 h-8 rounded-lg flex items-center justify-center transition-all group-hover:glow-green-sm"
         style="background: linear-gradient(135deg,#059669,#10b981);">
-        <span class="text-white font-black text-sm">T</span>
+        <span class="text-white font-black text-sm">AA</span>
       </div>
-      <span class="text-sm font-bold text-zinc-100 font-mono">tapetal<span class="text-accent-500">.dev</span></span>
+      <span class="text-sm font-bold text-zinc-100 font-mono">ashraf<span class="text-accent-500">-aminu</span></span>
     </a>
 
     <!-- Desktop nav -->

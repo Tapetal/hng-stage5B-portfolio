@@ -7,8 +7,8 @@
 </script>
 
 <svelte:head>
-  <title>Tapetal Dev — Frontend Engineer</title>
-  <meta name="description" content="Frontend engineer building real-time systems, E2EE apps, and high-performance interfaces." />
+  <title>Ashraf Aminu — Full Stack Software Engineer</title>
+  <meta name="description" content="Full Stack Software Engineer specializing in React.js, Node.js, and Web3. Building scalable, high-impact applications from Abuja, Nigeria." />
 </svelte:head>
 
 <Hero />

@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>About — Tapetal Dev</title>
+  <title>About — {me.name}</title>
 </svelte:head>
 
 <main class="pt-28 pb-24 px-6 min-h-screen">
@@ -19,19 +19,18 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="md:col-span-2 space-y-4">
           <p class="text-zinc-400 leading-relaxed">
-            I'm a frontend engineer based in {me.location}, focused on building high-performance
-            interfaces and real-time systems. I care deeply about the intersection of engineering
-            discipline and visual craft.
+            I'm a full-stack engineer based in {me.location}, specializing in Frontend excellence with React.js
+            and TypeScript. I build scalable applications using Node.js, AWS, and modern database architectures.
           </p>
           <p class="text-zinc-500 leading-relaxed text-sm">
-            Over the past year at HNG Internship, I've shipped production-grade applications across
-            5 progressive stages — from accessible UI components to end-to-end encrypted messaging
-            to real-time threat intelligence dashboards. Each project pushed me deeper into
-            architecture, performance optimisation, and security.
+            With experience across multiple internships and real-world projects, I've shipped production-grade
+            applications including Web3 platforms (TicketProof), encrypted messaging systems (WhisperBox), 
+            inventory management tools (Invora), and fintech applications (ROSCA). Each project has deepened 
+            my understanding of architecture, performance optimization, and security best practices.
           </p>
           <p class="text-zinc-500 leading-relaxed text-sm">
-            When I'm not building, I'm reading about distributed systems, browser internals,
-            or cryptography. I believe the best frontend engineers are also system thinkers.
+            I'm passionate about writing clean, maintainable code and solving complex business problems through
+            technology. When I'm not coding, I'm fascinated by science, technology, and AI. I also enjoy gaming and football.
           </p>
 
           <div class="flex items-center gap-3 pt-2">
@@ -53,10 +52,10 @@
         <!-- Stats -->
         <div class="grid grid-cols-2 md:grid-cols-1 gap-3">
           {#each [
-            { label: 'Projects shipped', value: '5+',  accent: '#10b981' },
-            { label: 'HNG stage',        value: '5/5', accent: '#6366f1' },
-            { label: 'Technologies',     value: '20+', accent: '#f59e0b' },
-            { label: 'Location',         value: 'NG 🇳🇬',accent: '#ec4899' },
+            { label: 'Projects shipped', value: '7+',  accent: '#10b981' },
+            { label: 'Years experience',  value: '2+', accent: '#06b6d4' },
+            { label: 'Technologies',     value: '25+', accent: '#8b5cf6' },
+            { label: 'Location',         value: 'NG 🇳🇬',accent: '#f59e0b' },
           ] as stat}
             <div class="rounded-xl border border-zinc-800 bg-surface-800 p-4">
               <p class="text-xs font-mono text-zinc-600 uppercase tracking-wider mb-1">{stat.label}</p>

@@ -4,7 +4,7 @@
 
   let mounted = false;
   let typedText = '';
-  const phrases = ['Frontend Engineer.', 'Systems Thinker.', 'UI Craftsman.', 'Open Source Builder.'];
+  const phrases = ['Full Stack Engineer.', 'React Developer.', 'Web3 Builder.', 'Problem Solver.'];
   let phraseIdx = 0;
   let charIdx = 0;
   let deleting = false;

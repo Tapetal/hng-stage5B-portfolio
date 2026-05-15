@@ -13,13 +13,12 @@
     { val: 'all',       label: 'All' },
     { val: 'fullstack', label: 'Full-Stack' },
     { val: 'frontend',  label: 'Frontend' },
-    { val: 'realtime',  label: 'Real-Time' },
     { val: 'security',  label: 'Security' },
   ];
 </script>
 
 <svelte:head>
-  <title>Projects — Tapetal Dev</title>
+  <title>Projects — {projects[0]?.title ? 'Ashraf Aminu' : 'Portfolio'}</title>
 </svelte:head>
 
 <main class="pt-28 pb-24 px-6 min-h-screen">
@@ -29,7 +28,7 @@
       <p class="text-xs font-mono text-accent-500 uppercase tracking-widest mb-3">// portfolio</p>
       <h1 class="text-4xl md:text-5xl font-black text-zinc-100 mb-4">All Projects</h1>
       <p class="text-zinc-500 text-base max-w-lg leading-relaxed">
-        A collection of things I've built — from real-time dashboards to encrypted messaging systems.
+        A collection of projects I've built — from Web3 platforms and encrypted messaging to inventory systems and payment integration applications.
       </p>
     </div>
 

@@ -43,9 +43,9 @@
       <div class="lg:col-span-2 space-y-4">
         {#each [
           { icon: '✉️', label: 'Email',    val: me.email,    href: `mailto:${me.email}` },
-          { icon: '🐙', label: 'GitHub',   val: 'tapetal',   href: me.github },
-          { icon: '💼', label: 'LinkedIn', val: 'tapetal',   href: me.linkedin },
-          { icon: '🐦', label: 'Twitter',  val: '@tapetal',  href: me.twitter },
+          { icon: '🐙', label: 'GitHub',   val: 'Tapetal',   href: me.github },
+          { icon: '💼', label: 'LinkedIn', val: 'ashraf-aminu',   href: me.linkedin },
+          { icon: '🐦', label: 'Twitter',  val: '@ashraf_amyn_',  href: me.twitter },
         ] as item}
           <a href={item.href} target="_blank" rel="noopener"
             class="flex items-center gap-4 p-4 rounded-2xl border border-zinc-800 bg-surface-800 hover:border-zinc-700 hover:bg-zinc-800/50 transition-all group">
