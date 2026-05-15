@@ -1,26 +1,39 @@
 export const me = {
   name:       'Ashraf Aminu',
-  title:      'Full Stack Software Engineer',
+  title:      'Software Developer',
   tagline:    'Crafting scalable, high-impact applications with clean UIs and efficient performance.',
-  bio:        "Full Stack Software Engineer specializing in Frontend excellence with React.js and TypeScript. Proficient in building scalable applications using Node.js, AWS, and modern database architectures. Passionate about writing clean, maintainable code and optimizing system performance.",
+  bio:        "I'm Ashraf, a results-driven software & web developer based in Abuja. I'm passionate about building secure, scalable applications that solve real business problems and improve user experience. Outside of work, I'm fascinated by science, technology, and artificial intelligence (AI). I also enjoy playing video games and football.",
   location:   'Abuja, FCT, Nigeria',
   email:      'aminuashraf55@gmail.com',
   github:     'https://github.com/Tapetal',
   twitter:    'https://x.com/ashraf_amyn_',
-  linkedin:   'https://linkedin.com/in/ashraf-aminu',
-  resume:     '/resume.pdf',
+  linkedin:   'https://www.linkedin.com/in/ashraf-aminu-a81310251',
+  resume:     'https://drive.google.com/file/d/19TV9KP1Za2cPvzJX_CJEHp4mqbBeO3l1/view?usp=sharing',
   available:  true,
   phone:      '+2347040762509',
   website:    'https://ashraf-aminu.vercel.app',
 };
 
-export const skills = [
-  { cat: 'Frontend',    items: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux', 'Context API'] },
-  { cat: 'Backend',     items: ['Node.js', 'Express.js', 'Python', 'C#', 'RESTful APIs', 'JWT'] },
-  { cat: 'Databases',   items: ['MongoDB', 'MySQL', 'PostgreSQL', 'SQL Server', 'Firebase'] },
-  { cat: 'Cloud & DevOps', items: ['AWS', 'Google Cloud', 'Git/GitHub', 'Postman', 'Docker', 'CI/CD'] },
-  { cat: 'Specialized', items: ['Web3', 'Hedera', 'Jest Testing', 'Payment Gateways', 'E2EE'] },
+export const skillGroups = [
+  {
+    title: 'Frontend',
+    skills: ['React.js', 'Next.js', 'TailwindCSS'],
+  },
+  {
+    title: 'Backend',
+    skills: ['Node.js', 'Express.js', 'REST APIs'],
+  },
+  {
+    title: 'Databases',
+    skills: ['MongoDB', 'PostgreSQL', 'SQL', 'Supabase'],
+  },
+  {
+    title: 'Cloud & Tools',
+    skills: ['AWS', 'Firebase', 'Git/GitHub'],
+  },
 ];
+
+export const skills = skillGroups.flatMap((group) => group.skills);
 
 export interface Project {
   id:          string;
@@ -28,7 +41,7 @@ export interface Project {
   description: string;
   longDesc:    string;
   tags:        string[];
-  category:    'fullstack' | 'frontend' | 'realtime' | 'security';
+  category:    'fullstack' | 'frontend' | 'realtime' | 'security' | 'mobile';
   accent:      string;
   icon:        string;
   demo?:       string;
@@ -128,7 +141,7 @@ export const projects: Project[] = [
     description: 'Multi-featured mobile app with QR scanning and brain teaser puzzles',
     longDesc:    'Cross-platform mobile application featuring QR code scanning, QR generation, puzzle solving, offline support, and AdMob integration. Built with React Native with tab-based navigation.',
     tags:        ['React Native', 'JavaScript', 'Mobile', 'QR Code', 'Expo'],
-    category:    'frontend',
+    category:    'mobile',   // ← moved from 'frontend' to 'mobile'
     accent:      '#14b8a6',
     icon:        '📱',
     repo:        'https://github.com/Tapetal/QR-Scanner-Pro',
@@ -138,8 +151,79 @@ export const projects: Project[] = [
 ];
 
 export const timeline = [
-  { year: '2026', title: 'Engineering & Technology Intern', desc: 'Contributing to NOMA platform at Noma Service Consolidated Ltd', accent: '#10b981' },
-  { year: '2025', title: 'IT Support & Data Management', desc: 'Nigerian Shippers Council - Database optimization (20% latency reduction)', accent: '#06b6d4' },
-  { year: '2024', title: 'Frontend Developer Intern', desc: 'Comsoft - Component library & automated testing (15% efficiency gain)', accent: '#8b5cf6' },
-  { year: '2022', title: 'Advanced Diploma in Software Engineering', desc: 'Aptech - Full-stack development, databases, and modern frameworks', accent: '#f59e0b' },
+  {
+    year: '2026',
+    title: 'Engineering & Technology Intern',
+    company: 'Noma Service Consolidated Ltd',
+    location: 'Abuja, FCT, Nigeria',
+    period: 'April 2026 - Present',
+    desc: 'Serving in the Engineering & Technology department at Noma Service Consolidated Ltd, an agri-tech firm empowering over 15,000 smallholder farmers across Nigeria, responsible for driving the design, development, and deployment of NOMA\'s digital infrastructure and platforms.',
+    highlights: [
+      'Contributing to the development and maintenance of the Thrum platform',
+      'NOMA website development, maintenance, and performance optimization',
+      'Maintaining code repositories, technical documentation, and internal workflows',
+      'Cybersecurity, access control, system integrations, and digital asset management'
+    ],
+    accent: '#10b981'
+  },
+  {
+    year: '2025',
+    title: 'Bachelor of Science in Information Technology (Hons)',
+    company: 'Lincoln University',
+    location: 'Abuja, FCT, Nigeria',
+    period: 'November 2025 - Present',
+    desc: 'Pursuing a comprehensive degree in Information Technology with focus on software development, systems architecture, and emerging technologies.',
+    highlights: [
+      'Studying advanced topics in software engineering, cloud computing, and database systems',
+      'Applying academic knowledge to real-world projects and internships',
+      'Building expertise in system design, algorithms, and modern development frameworks',
+      'Developing strong foundation in IT infrastructure and security principles'
+    ],
+    accent: '#06b6d4'
+  },
+  {
+    year: '2025',
+    title: 'IT Support & Data Management Intern',
+    company: 'Nigerian Shippers\' Council',
+    location: 'Abuja, FCT, Nigeria',
+    period: 'March 2025 - Oct 2025',
+    desc: 'Supporting data management operations and contributing to strategic decision-making through technical insights and documentation.',
+    highlights: [
+      'Streamlined database entry processes, reducing retrieval time by 20%',
+      'Prepared detailed project reports and presentations for senior staff',
+      'Developed internal documentation and process guidelines',
+      'Contributed to problem-solving sessions that led to more efficient workflows'
+    ],
+    accent: '#8b5cf6'
+  },
+  {
+    year: '2024',
+    title: 'Frontend Developer Intern',
+    company: 'Comsoft',
+    location: 'Abuja',
+    period: 'October 2024 - March 2025',
+    desc: 'Assisted in developing and testing software solutions while collaborating with senior developers to enhance application quality.',
+    highlights: [
+      'Introduced automated testing scripts improving coding efficiency by 15%',
+      'Researched and implemented new tools to optimize workflow',
+      'Collaborated with senior developers to debug and enhance applications',
+      'Delivered technical presentations improving team understanding'
+    ],
+    accent: '#f59e0b'
+  },
+  {
+    year: '2022',
+    title: 'Advanced Diploma in Software Engineering',
+    company: 'Aptech Learning',
+    location: 'Abuja, FCT, Nigeria',
+    period: 'October 2022 - October 2024',
+    desc: 'Comprehensive software engineering program covering full-stack development, databases, and modern frameworks.',
+    highlights: [
+      'Completed coursework in Java, C#, Python, Flutter, and AngularJS',
+      'Built and deployed websites, mobile apps, and Python web applications',
+      'Mastered SQL Server, MySQL, and database optimization',
+      'Gained expertise in Agile, DevOps, and cloud platforms'
+    ],
+    accent: '#ec4899'
+  }
 ];

@@ -1,96 +1,144 @@
 <script lang="ts">
-  import { me, skills, timeline } from '$lib/utils/data';
+  import { me, timeline } from '$lib/utils/data';
   import Skills from '$lib/components/sections/Skills.svelte';
   import Timeline from '$lib/components/sections/Timeline.svelte';
+
+  const facts = [
+    { label: 'Based in',    value: 'Abuja, Nigeria',     icon: '📍' },
+    { label: 'Focus',       value: 'Full-Stack Dev',      icon: '⚡' },
+    { label: 'Status',      value: 'Open to work',        icon: '✅' },
+    { label: 'Interests',   value: 'AI · Games · Football', icon: '🎮' },
+  ];
+
+  const sections = [
+    {
+      num: '01',
+      title: 'Background',
+      emoji: '👨‍💻',
+      body: me.bio,
+    },
+    {
+      num: '02',
+      title: 'Expertise',
+      emoji: '🚀',
+      body: 'I design and develop full-stack web applications using modern technologies like JavaScript, TypeScript, React.js, Node.js, MySQL, MongoDB & Firebase. I enjoy transforming ideas into high-performing digital solutions — from responsive web apps to cloud-powered services.',
+    },
+    {
+      num: '03',
+      title: 'Motivation',
+      emoji: '💡',
+      body: 'Technology gives me a way to solve problems that matter — faster workflows, automated systems, and tools that help people. I love seeing how software can turn complex processes into simple, scalable, and smarter solutions. Every project is a chance to learn, improve, and contribute something valuable.',
+    },
+  ];
 </script>
 
 <svelte:head>
   <title>About — {me.name}</title>
 </svelte:head>
 
-<main class="pt-28 pb-24 px-6 min-h-screen">
-  <div class="max-w-4xl mx-auto">
+<main class="min-h-screen pt-24 pb-32">
 
-    <!-- Header -->
-    <div class="mb-16 animate-fade-up">
-      <p class="text-xs font-mono text-accent-500 uppercase tracking-widest mb-3">// about me</p>
-      <h1 class="text-4xl md:text-5xl font-black text-zinc-100 mb-6">I'm {me.name}</h1>
+  <!-- ── Hero ── -->
+  <section class="px-4 sm:px-6 pt-10 pb-20">
+    <div class="max-w-4xl mx-auto">
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="md:col-span-2 space-y-4">
-          <p class="text-zinc-400 leading-relaxed">
-            I'm a full-stack engineer based in {me.location}, specializing in Frontend excellence with React.js
-            and TypeScript. I build scalable applications using Node.js, AWS, and modern database architectures.
-          </p>
-          <p class="text-zinc-500 leading-relaxed text-sm">
-            With experience across multiple internships and real-world projects, I've shipped production-grade
-            applications including Web3 platforms (TicketProof), encrypted messaging systems (WhisperBox), 
-            inventory management tools (Invora), and fintech applications (ROSCA). Each project has deepened 
-            my understanding of architecture, performance optimization, and security best practices.
-          </p>
-          <p class="text-zinc-500 leading-relaxed text-sm">
-            I'm passionate about writing clean, maintainable code and solving complex business problems through
-            technology. When I'm not coding, I'm fascinated by science, technology, and AI. I also enjoy gaming and football.
-          </p>
+      <!-- Top label -->
+      <p class="text-xs font-mono text-accent-500 uppercase tracking-[0.25em] mb-6">// about me</p>
 
-          <div class="flex items-center gap-3 pt-2">
-            <a href={me.resume} target="_blank"
-              class="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-all"
-              style="background:linear-gradient(135deg,#059669,#10b981); box-shadow:0 4px 16px rgba(16,185,129,0.2)">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
-              Download CV
-            </a>
-            <a href="/contact"
-              class="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-zinc-400 border border-zinc-800 hover:border-zinc-600 hover:text-zinc-200 transition-all bg-surface-800">
-              Get in touch →
-            </a>
+      <!-- Name + image row -->
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8 mb-10">
+        <div>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-zinc-900 dark:text-zinc-100 leading-[1.05] mb-4">
+            Get to know<br/>
+            <span class="text-gradient">me better.</span>
+          </h1>
+          <p class="text-zinc-500 dark:text-zinc-400 text-base max-w-md leading-relaxed">
+            Developer, builder, and problem-solver based in Abuja.
+          </p>
+        </div>
+
+        <!-- Avatar — no circle, clean card style -->
+        <div class="flex-shrink-0">
+          <div class="relative w-28 h-28 sm:w-36 sm:h-36">
+            <img
+              src="/memoji.png"
+              alt="Ashraf Aminu"
+              class="w-full h-full object-cover rounded-3xl border border-zinc-200 dark:border-white/10 shadow-xl"
+            />
+            <!-- Small available dot -->
+            <span class="absolute -bottom-1.5 -right-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-accent-500 border-2 border-white dark:border-[#080a0e]">
+              <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping absolute"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-white relative"></span>
+            </span>
           </div>
         </div>
+      </div>
 
-        <!-- Stats -->
-        <div class="grid grid-cols-2 md:grid-cols-1 gap-3">
-          {#each [
-            { label: 'Projects shipped', value: '7+',  accent: '#10b981' },
-            { label: 'Years experience',  value: '2+', accent: '#06b6d4' },
-            { label: 'Technologies',     value: '25+', accent: '#8b5cf6' },
-            { label: 'Location',         value: 'NG 🇳🇬',accent: '#f59e0b' },
-          ] as stat}
-            <div class="rounded-xl border border-zinc-800 bg-surface-800 p-4">
-              <p class="text-xs font-mono text-zinc-600 uppercase tracking-wider mb-1">{stat.label}</p>
-              <p class="text-xl font-black" style="color:{stat.accent}">{stat.value}</p>
+      <!-- Quick facts strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {#each facts as fact}
+          <div class="rounded-2xl border border-zinc-200 dark:border-white/6 bg-zinc-50 dark:bg-surface-800 px-4 py-3">
+            <p class="text-lg mb-1">{fact.icon}</p>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-0.5">{fact.label}</p>
+            <p class="text-xs font-semibold text-zinc-700 dark:text-zinc-300">{fact.value}</p>
+          </div>
+        {/each}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Story sections ── -->
+  <section class="px-4 sm:px-6 pb-24">
+    <div class="max-w-4xl mx-auto space-y-6">
+      {#each sections as s, i}
+        <div class="group rounded-3xl border border-zinc-200 dark:border-white/6 bg-white dark:bg-surface-800 p-6 sm:p-8 transition-all hover:border-zinc-300 dark:hover:border-white/10 hover:shadow-lg dark:hover:shadow-black/20">
+          <div class="flex items-start gap-5">
+            <!-- Number -->
+            <span class="font-mono text-4xl font-black text-zinc-100 dark:text-zinc-800 select-none flex-shrink-0 leading-none mt-1">
+              {s.num}
+            </span>
+
+            <div class="flex-1 min-w-0">
+              <!-- Title row -->
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xl">{s.emoji}</span>
+                <h2 class="text-lg font-bold text-zinc-800 dark:text-zinc-100">{s.title}</h2>
+              </div>
+              <!-- Body -->
+              <p class="text-sm leading-7 text-zinc-500 dark:text-zinc-400">{s.body}</p>
             </div>
-          {/each}
+          </div>
         </div>
-      </div>
+      {/each}
     </div>
+  </section>
 
-    <!-- Available for work banner -->
-    <div class="mb-16 rounded-2xl border p-6 flex items-center justify-between flex-wrap gap-4"
-      style="background:rgba(16,185,129,0.05); border-color:rgba(16,185,129,0.2)">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-accent-500/10 flex items-center justify-center">
-          <span class="relative flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-60" />
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-accent-500" />
-          </span>
-        </div>
+  <!-- ── Toolkit / Skills ── -->
+  <section class="px-4 sm:px-6 pb-24">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-4 mb-8">
+        <span class="font-mono text-4xl font-black text-zinc-100 dark:text-zinc-800 select-none">04</span>
         <div>
-          <p class="text-sm font-bold text-zinc-100">Available for work</p>
-          <p class="text-xs text-zinc-500">Open to full-time roles and freelance projects</p>
+          <p class="text-[10px] font-mono text-accent-500 uppercase tracking-widest mb-0.5">// toolkit</p>
+          <h2 class="text-xl font-bold text-zinc-800 dark:text-zinc-100">My Toolkit</h2>
         </div>
       </div>
-      <a href="/contact"
-        class="px-4 py-2 rounded-xl text-sm font-bold text-white transition-all"
-        style="background:linear-gradient(135deg,#059669,#10b981)">
-        Contact me →
-      </a>
+      <Skills />
     </div>
-  </div>
+  </section>
 
-  <!-- Skills section (reused) -->
-  <Skills />
-  <!-- Timeline section (reused) -->
-  <Timeline />
+  <!-- ── Timeline ── -->
+  <section class="px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-4 mb-8">
+        <span class="font-mono text-4xl font-black text-zinc-100 dark:text-zinc-800 select-none">05</span>
+        <div>
+          <p class="text-[10px] font-mono text-accent-500 uppercase tracking-widest mb-0.5">// experience</p>
+          <h2 class="text-xl font-bold text-zinc-800 dark:text-zinc-100">My Journey</h2>
+        </div>
+      </div>
+      <Timeline />
+    </div>
+  </section>
+
 </main>
